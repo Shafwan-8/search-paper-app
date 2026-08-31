@@ -65,7 +65,7 @@ const handleSearch = async () => {
         <!-- Opsi Filter -->
         <div class="flex justify-center gap-2 sm:gap-4 text-sm font-medium text-gray-600">
           <label 
-            v-for="filter in ['semua', 'buku', 'jurnal', 'skripsi']" 
+            v-for="filter in ['buku', 'jurnal', 'skripsi']" 
             :key="filter"
             :class="[
               'px-4 py-1.5 rounded-full cursor-pointer transition-all capitalize',
@@ -101,8 +101,14 @@ const handleSearch = async () => {
           :key="item.id"
           class="p-5 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow"
         >
-          <span class="inline-block px-2.5 py-0.5 text-xs font-semibold text-blue-800 bg-blue-100 rounded-full uppercase mb-2">
-            {{ item.type }}
+          <span v-if="item.type == 'book'" class="inline-block px-2.5 py-0.5 text-xs font-semibold text-blue-800 bg-blue-100 rounded-full uppercase mb-2">
+            Buku / {{ item.type }}
+          </span>
+          <span v-else-if="item.type == 'article'" class="inline-block px-2.5 py-0.5 text-xs font-semibold text-green-800 bg-green-100 rounded-full uppercase mb-2">
+            Jurnal / {{ item.type }}
+          </span>
+          <span v-else-if="item.type == 'dissertation'" class="inline-block px-2.5 py-0.5 text-xs font-semibold text-red-800 bg-red-100 rounded-full uppercase mb-2">
+            Skripsi / {{ item.type }}
           </span>
           <h2 class="text-lg font-bold text-gray-900 leading-snug">
             <a :href="item.link" target="_blank" class="hover:underline hover:text-blue-600">
