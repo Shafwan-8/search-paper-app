@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 app.get('/api/search', async (req, res) => {
-  const { q, type } = req.query;
+  const { q, type, year, from_year, to_year } = req.query;
 
   if (!q) {
     return res.status(400).json({ error: 'Query pencarian kosong' });
@@ -24,13 +24,42 @@ app.get('/api/search', async (req, res) => {
   let apiUrl = `https://api.openalex.org/works`;
   let queryParams = {
     search: q,
-    per_page: 10, // Membatasi hasil awal agar UI tidak berat
+    per_page: 15, // Membatasi hasil awal agar UI tidak berat
     api_key: process.env.OPENALEX_API_KEY // API key dari .env
   };
 
-  // 3. Memasukkan filter tipe jika user tidak memilih "semua"
+  // 3. Memasukkan filter tipe & tahun ke OpenAlex
+  const filters = [];
+
   if (openAlexType) {
-    queryParams.filter = `type:${openAlexType}`;
+    filters.push(`type:${openAlexType}`);
+  }
+
+  // Filter tahun pembuatan / publikasi
+  const currentYear = new Date().getFullYear();
+  if (from_year && to_year) {
+    filters.push(`publication_year:${from_year}-${to_year}`);
+  } else if (from_year) {
+    filters.push(`publication_year:${from_year}-${currentYear}`);
+  } else if (to_year) {
+    filters.push(`publication_year:1900-${to_year}`);
+  } else if (year && year !== 'semua') {
+    if (year === '1_tahun') {
+      filters.push(`publication_year:${currentYear - 1}-${currentYear}`);
+    } else if (year === '3_tahun') {
+      filters.push(`publication_year:${currentYear - 3}-${currentYear}`);
+    } else if (year === '5_tahun') {
+      filters.push(`publication_year:${currentYear - 5}-${currentYear}`);
+    } else if (year === '10_tahun') {
+      filters.push(`publication_year:${currentYear - 10}-${currentYear}`);
+    } else {
+      // Jika format tahun langsung (misal: "2023" atau "2020-2024")
+      filters.push(`publication_year:${year}`);
+    }
+  }
+
+  if (filters.length > 0) {
+    queryParams.filter = filters.join(',');
   }
 
   try {
