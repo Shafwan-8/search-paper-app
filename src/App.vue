@@ -1,6 +1,12 @@
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios';
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption,
+} from '@headlessui/vue';
 
 const searchQuery = ref('');
 const inputError = ref('');
@@ -174,86 +180,147 @@ const clearSearch = () => {
           </div>
         </div>
 
-        <!-- Filter Control Card -->
-        <div class="bg-[#2B251B] border border-[#443B2E] rounded-[10px] p-5 sm:p-6 space-y-4 shadow-sm">
-          <!-- Filter Kategori -->
-          <div class="flex flex-col sm:flex-row sm:items-center gap-3 text-sm">
-            <span class="text-[#DBD9D2] font-semibold w-24 shrink-0 text-xs uppercase tracking-wider">Kategori:</span>
-            <div class="flex flex-wrap gap-2">
-              <label 
-                v-for="cat in categoryOptions" 
-                :key="cat.value"
-                :class="[
-                  'px-4 py-1.5 rounded-[200px] cursor-pointer transition-colors duration-150 text-xs font-medium border select-none',
-                  selectedFilter === cat.value 
-                    ? 'bg-[#004E56] text-[#FFFFFF] border-[#004E56]' 
-                    : 'bg-[#383023] text-[#DBD9D2] border-[#4D4233] hover:border-[#004E56] hover:text-white'
-                ]"
-              >
-                <input
-                  type="radio"
-                  name="type_filter"
-                  :value="cat.value"
-                  v-model="selectedFilter"
-                  class="hidden"
-                />
-                {{ cat.label }}
-              </label>
-            </div>
+        <!-- Filter Control Card (Tailwind Plus Dropdown 1 Baris) -->
+        <div class="bg-[#2B251B] border border-[#443B2E] rounded-[10px] p-4 sm:p-5 shadow-sm space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-sm">
+            <!-- Tailwind Plus Dropdown Kategori -->
+            <Listbox v-model="selectedFilter" as="div" class="flex items-center gap-3 flex-1 relative">
+              <span class="text-[#DBD9D2] font-semibold text-xs uppercase tracking-wider shrink-0">
+                Kategori:
+              </span>
+              <div class="relative w-full">
+                <ListboxButton
+                  class="relative w-full cursor-pointer bg-[#1F1A12] border-2 border-[#4A3F30] hover:border-[#6B5E4A] focus:border-[#FFE01B] rounded-sm py-2 pl-3.5 pr-9 text-left text-xs sm:text-sm font-medium text-[#FAF9F6] focus:outline-none transition-colors"
+                >
+                  <span class="block truncate">
+                    {{ categoryOptions.find(c => c.value === selectedFilter)?.label }}
+                  </span>
+                  <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-[#DBD9D2]">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </ListboxButton>
+
+                <transition
+                  leave-active-class="transition duration-100 ease-in"
+                  leave-from-class="opacity-100"
+                  leave-to-class="opacity-0"
+                >
+                  <ListboxOptions
+                    class="absolute z-50 mt-1.5 max-h-60 w-full overflow-auto rounded-[10px] bg-[#2B251B] border border-[#443B2E] p-1 text-xs sm:text-sm shadow-xl ring-1 ring-black/10 focus:outline-none"
+                  >
+                    <ListboxOption
+                      v-slot="{ active, selected }"
+                      v-for="cat in categoryOptions"
+                      :key="cat.value"
+                      :value="cat.value"
+                      as="template"
+                    >
+                      <li
+                        :class="[
+                          active ? 'bg-[#3E3426] text-[#FFE01B]' : 'text-[#FAF9F6]',
+                          'relative cursor-pointer select-none py-2 pl-8 pr-4 rounded-md transition-colors'
+                        ]"
+                      >
+                        <span :class="[selected ? 'font-semibold text-[#FFE01B]' : 'font-normal', 'block truncate']">
+                          {{ cat.label }}
+                        </span>
+                        <span v-if="selected" class="absolute inset-y-0 left-0 flex items-center pl-2 text-[#FFE01B]">
+                          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ListboxOption>
+                  </ListboxOptions>
+                </transition>
+              </div>
+            </Listbox>
+
+            <!-- Tailwind Plus Dropdown Tahun -->
+            <Listbox v-model="selectedYearFilter" as="div" class="flex items-center gap-3 flex-1 relative">
+              <span class="text-[#DBD9D2] font-semibold text-xs uppercase tracking-wider shrink-0">
+                Tahun:
+              </span>
+              <div class="relative w-full">
+                <ListboxButton
+                  class="relative w-full cursor-pointer bg-[#1F1A12] border-2 border-[#4A3F30] hover:border-[#6B5E4A] focus:border-[#FFE01B] rounded-sm py-2 pl-3.5 pr-9 text-left text-xs sm:text-sm font-medium text-[#FAF9F6] focus:outline-none transition-colors"
+                >
+                  <span class="block truncate">
+                    {{ yearOptions.find(y => y.value === selectedYearFilter)?.label }}
+                  </span>
+                  <span class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2.5 text-[#DBD9D2]">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </span>
+                </ListboxButton>
+
+                <transition
+                  leave-active-class="transition duration-100 ease-in"
+                  leave-from-class="opacity-100"
+                  leave-to-class="opacity-0"
+                >
+                  <ListboxOptions
+                    class="absolute z-50 mt-1.5 max-h-60 w-full overflow-auto rounded-[10px] bg-[#2B251B] border border-[#443B2E] p-1 text-xs sm:text-sm shadow-xl ring-1 ring-black/10 focus:outline-none"
+                  >
+                    <ListboxOption
+                      v-slot="{ active, selected }"
+                      v-for="opt in yearOptions"
+                      :key="opt.value"
+                      :value="opt.value"
+                      as="template"
+                    >
+                      <li
+                        :class="[
+                          active ? 'bg-[#3E3426] text-[#FFE01B]' : 'text-[#FAF9F6]',
+                          'relative cursor-pointer select-none py-2 pl-8 pr-4 rounded-md transition-colors'
+                        ]"
+                      >
+                        <span :class="[selected ? 'font-semibold text-[#FFE01B]' : 'font-normal', 'block truncate']">
+                          {{ opt.label }}
+                        </span>
+                        <span v-if="selected" class="absolute inset-y-0 left-0 flex items-center pl-2 text-[#FFE01B]">
+                          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                          </svg>
+                        </span>
+                      </li>
+                    </ListboxOption>
+                  </ListboxOptions>
+                </transition>
+              </div>
+            </Listbox>
           </div>
 
-          <!-- Filter Tahun -->
-          <div class="flex flex-col sm:flex-row sm:items-center gap-3 text-sm pt-3 border-t border-[#3D3427]">
-            <span class="text-[#DBD9D2] font-semibold w-24 shrink-0 text-xs uppercase tracking-wider">Tahun:</span>
-            <div class="flex flex-wrap gap-2 items-center">
-              <label 
-                v-for="opt in yearOptions" 
-                :key="opt.value"
-                :class="[
-                  'px-4 py-1.5 rounded-[200px] cursor-pointer transition-colors duration-150 text-xs font-medium border select-none',
-                  selectedYearFilter === opt.value 
-                    ? 'bg-[#004E56] text-[#FFFFFF] border-[#004E56]' 
-                    : 'bg-[#383023] text-[#DBD9D2] border-[#4D4233] hover:border-[#004E56] hover:text-white'
-                ]"
-              >
-                <input
-                  type="radio"
-                  name="year_filter"
-                  :value="opt.value"
-                  v-model="selectedYearFilter"
-                  class="hidden"
-                />
-                {{ opt.label }}
-              </label>
-            </div>
-          </div>
-
-          <!-- Input Rentang Tahun Kustom -->
+          <!-- Input Rentang Tahun Kustom (Muncul di bawahnya jika memilih Kustom) -->
           <div 
             v-if="selectedYearFilter === 'kustom'" 
-            class="flex items-center gap-3 pt-2 pl-0 sm:pl-27 text-sm"
+            class="flex items-center justify-end gap-3 pt-2 border-t border-[#3D3427] text-xs sm:text-sm"
           >
+            <span class="text-xs text-[#8E8679] font-medium">Rentang Tahun:</span>
             <div class="flex items-center gap-2">
-              <label class="text-xs text-[#DBD9D2]">Dari:</label>
+              <label class="text-xs text-[#DBD9D2]">Dari</label>
               <input
                 v-model="fromYear"
                 type="number"
                 placeholder="2018"
                 min="1900"
                 max="2099"
-                class="w-24 px-3 py-1.5 text-xs bg-[#1F1A12] border-2 border-[#4A3F30] rounded-[4px] text-[#FAF9F6] placeholder-[#7E776C] focus:border-[#FFE01B] focus:outline-none"
+                class="w-20 px-2.5 py-1.5 text-xs bg-[#1F1A12] border-2 border-[#4A3F30] rounded-sm text-[#FAF9F6] placeholder-[#7E776C] focus:border-[#FFE01B] focus:outline-none"
               />
             </div>
             <span class="text-[#7E776C]">-</span>
             <div class="flex items-center gap-2">
-              <label class="text-xs text-[#DBD9D2]">Sampai:</label>
+              <label class="text-xs text-[#DBD9D2]">Sampai</label>
               <input
                 v-model="toYear"
                 type="number"
                 placeholder="2024"
                 min="1900"
                 max="2099"
-                class="w-24 px-3 py-1.5 text-xs bg-[#1F1A12] border-2 border-[#4A3F30] rounded-[4px] text-[#FAF9F6] placeholder-[#7E776C] focus:border-[#FFE01B] focus:outline-none"
+                class="w-20 px-2.5 py-1.5 text-xs bg-[#1F1A12] border-2 border-[#4A3F30] rounded-sm text-[#FAF9F6] placeholder-[#7E776C] focus:border-[#FFE01B] focus:outline-none"
               />
             </div>
           </div>
