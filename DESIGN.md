@@ -1,454 +1,468 @@
 ---
-name: Perplexity
+name: Mailchimp
 colors:
-  primary: "#271A00"
-  secondary: "#D6D5D4"
+  primary: "#004E56"
+  secondary: "#231E15"
   surface: "#000000"
   on-surface: "#FFFFFF"
-  error: "#E10600"
+  error: "#E12437"
 typography:
   body-md:
-    fontFamily: pplxSans
-    fontSize: 16px
+    fontFamily: Means Web
+    fontSize: 24px
     fontWeight: 400
 rounded:
-  md: 6px
+  md: 44px
 ---
 
-# Design System Inspired by Perplexity
+# Design System Inspired by Mailchimp
 
 ## 1. Visual Theme & Atmosphere
 
-Perplexity's design system embodies a clean, minimalist aesthetic paired with a sophisticated dark-neutral palette that suggests trust and intelligence. The interface prioritizes clarity and accessibility, using soft contrast ratios and generous whitespace to create a calm, conversational experience. The teal accent (`#016A71`) provides strategic visual focus for primary actions and notifications, while the warm brown undertones (`#271A00`) ground the interface in approachability. This balance of refined typography, carefully orchestrated spacing, and subtle shadows creates an interface that feels both contemporary and trustworthy—ideal for an AI-powered answer engine. The color palette avoids aggressive primary blues in favor of muted, sophisticated tones that reduce visual fatigue during extended use.
+Mailchimp's design system embodies a modern, professional yet approachable aesthetic designed for business growth and productivity. The visual identity balances sophisticated typography with bold accent colors, creating an interface that feels both trustworthy and energetic. Deep teals and blacks ground the design in stability, while vibrant yellows and accent colors inject optimism and urgency. The system emphasizes clarity and hierarchy, with generous whitespace and purposeful contrast that guides users through complex marketing workflows. The overall mood is confident, forward-thinking, and deeply rooted in helping businesses scale their audience engagement.
 
 **Key Characteristics**
-- Minimalist and content-focused layout with ample whitespace
-- Soft, warm-neutral color foundation with strategic teal accents
-- Subtle shadow and border treatments for depth without heaviness
-- High-readability typography optimized for search and discovery interfaces
-- Warm, approachable tone balanced with professional sophistication
-- Mobile-first responsive design with thoughtful touch targets
-- Accessible contrast ratios and semi-transparent overlays for layering
+- Clean, modern typography hierarchy with serif and sans-serif contrast
+- Strategic use of bold accent colors (teal, yellow) against neutral backgrounds
+- High contrast text on white and dark surfaces for accessibility
+- Generous spacing and breathing room in layouts
+- Rounded corners on interactive components for approachability
+- Subtle shadows for depth without visual clutter
+- Business-focused, data-driven visual language
 
 ## 2. Color Palette & Roles
 
 ### Primary
-- **Teal Accent** (`#016A71`): Primary call-to-action buttons, accent highlights, active navigation states, and key interactive elements that require visual prominence.
-- **Dark Brown** (`#271A00`): Dominant neutral anchor used throughout the system for text, borders, and subtle background tints to establish visual hierarchy.
+- **Primary Teal** (`#004E56`): Core brand color used for links, active states, and primary navigation elements. Represents trust and stability.
+- **Deep Brown** (`#231E15`): Secondary primary used extensively for text, body content, and backgrounds. Conveys professionalism and grounding.
 
 ### Accent Colors
-- **Rust Red** (`#A23544`): Secondary accent for warning or alert states; used sparingly for cautionary messages.
-- **Coral** (`#DC6973`): Softer alternative to pure red for error messages and destructive action warnings with reduced severity perception.
-- **Warm Brown** (`#97431A`): Tertiary accent for supplementary highlights, secondary icons, or thematic elements.
+- **Bright Yellow** (`#FFE01B`): High-visibility accent for CTAs, highlights, and success states. Creates urgency and draws attention to key actions.
+- **Coral Red** (`#FF7346`): Supporting accent color for creative or differentiation purposes.
+- **Electric Blue** (`#236CFF`): Tertiary accent for interactive elements and special emphasis.
+- **Lavender** (`#BBAADD`): Soft accent for supporting UI elements.
+- **Sage Green** (`#AADDAA`): Muted accent for secondary emphasis or category indicators.
 
 ### Interactive
-- **Light Transparent Brown** (`#27251E` at 65% opacity / `rgba(39, 37, 30, 0.65)`): Active button and icon states; indicates interactivity without full saturation.
-- **Muted Brown** (`#27251E` at 50% opacity / `rgba(39, 37, 30, 0.5)`): Disabled or secondary interactive elements; provides visual feedback for reduced affordance.
-- **Dark Brown Border** (`#271A00` at 14% opacity / `rgba(39, 26, 0, 0.14)`): Subtle borders for input fields, cards, and container boundaries.
+- **Primary Action** (`#FFE01B`): Used for primary buttons, "Buy Now," and call-to-action elements requiring maximum attention.
+- **Secondary Action** (`#FFFFFF` with `#231E15` border): Secondary buttons for less critical actions, often paired with outline styling.
+- **Link Color** (`#004E56`): Default link color for inline text navigation and hyperlinks.
 
 ### Neutral Scale
-- **Pure Black** (`#000000`): Primary text, primary headings, and high-contrast foreground elements.
-- **Off-White** (`#FDFBFA`): Subtle background tint for layered surfaces and light page backgrounds.
-- **White** (`#FFFFFF`): Pure white for primary surfaces, input fields, and modal backgrounds.
-- **Light Gray** (`#D6D5D4`): Dividers, disabled text, and very subtle background accents.
+- **Black** (`#000000`): Primary text color, darkest UI elements, and high-contrast backgrounds. Used extensively for body copy and hierarchy.
+- **Dark Gray** (`#575757`): Secondary text color for lighter emphasis or reduced hierarchy content.
+- **Medium Gray** (`#666666`): Tertiary text for captions and supplementary information.
+- **Light Gray** (`#BCBAB6`): Dividers, borders, and subtle UI separators.
+- **Off-White** (`#F6F6F4`): Soft background color for sections and subtle contrast areas.
+- **Warm Beige** (`#DBD9D2`): Alternative light background for visual variety and section separation.
+- **Charcoal** (`#403B3B`): Dark text alternative for high contrast on light backgrounds.
+- **White** (`#FFFFFF`): Primary surface color for cards, modals, and content areas.
 
 ### Surface & Borders
-- **Subtle Surface Tint** (`#271A00` at 3.5% opacity / `rgba(39, 26, 0, 0.035)`): Background color for cards, containers, and secondary surfaces; barely perceptible warm tint over white.
-- **Transparent Black** (`#0000` / transparent): Default fill for elements requiring no background color; allows underlying surface to show through.
+- **Card Background** (`#FFFFFF`): Default surface for content containers, pricing cards, and modals.
+- **Border Light** (`#BCBAB6`): Subtle dividers between sections and light borders.
+- **Section Divider** (`#DBD9D2`): Stronger border for separating distinct sections.
 
 ### Semantic / Status
-- **Success** (`#539E55`): Success messages, positive confirmations, and completed actions.
-- **Error / Danger** (`#E10600`): Error states, validation failures, and destructive confirmations.
+- **Warning** (`#FFE01B`): Alerts, warnings, and promotional messaging requiring user attention.
+- **Error** (`#E12437`): Error messages, validation failures, and destructive action warnings.
+- **Success** (`#004E56` or `#AADDAA`): Confirmation states and successful completions.
 
 ## 3. Typography Rules
 
 ### Font Family
-**Primary Font:** `pplxSans`, system stack fallback: `-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif`
+**Primary: Means Web** — Serif typeface used for headlines and display text, creating sophistication and brand personality.
+Fallback: Georgia, serif
 
-**Secondary Font:** Same as primary; the system uses a single typeface family throughout.
+**Secondary: Graphik Web** — Modern sans-serif for body text, UI labels, and interface elements. Ensures readability and contemporary feel.
+Fallback: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif
 
 ### Hierarchy
 
 | Role | Font | Size | Weight | Line Height | Letter Spacing | Notes |
-|------|------|------|--------|-------------|---|---|
-| Display / Hero | pplxSans | 32px | 600 | 40px | 0px | Main page heading "What do you want to know?" |
-| Heading 1 | pplxSans | 28px | 600 | 36px | 0px | Section headings and major titles |
-| Heading 2 | pplxSans | 24px | 600 | 32px | 0px | Subsection headings |
-| Heading 3 | pplxSans | 20px | 600 | 28px | 0px | Card titles and modal headings |
-| Body | pplxSans | 16px | 400 | 24px | 0px | Primary body text, paragraph content |
-| Body Small | pplxSans | 14px | 400 | 20px | 0px | Secondary body text, descriptions |
-| Button / Label | pplxSans | 16px | 500 | 24px | 0px | Button labels, navigation items |
-| Caption | pplxSans | 12px | 400 | 16px | 0px | Helper text, timestamps, metadata |
-| Code / Mono | pplxSans | 14px | 400 | 20px | 0px | Inline code, monospace equivalents |
+|------|------|------|--------|-------------|----------------|-------|
+| Display XL | Means Web | 64px | 400 | 76.8px | 0px | Page hero headlines, primary messaging |
+| Display L | Means Web | 48px | 400 | 48px | 0px | Major section headers, prominent headings |
+| Display M | Means Web | 40px | 400 | 40px | 0px | Section headings, strong visual breaks |
+| Heading L | Means Web | 24px | 400 | 31.99px | 0px | Subsection headers, card titles |
+| Heading M | Graphik Web | 18px | 500 | 24.3px | 0px | Form labels, secondary headings (inferred) |
+| Heading S | Graphik Web | 16px | 400 | 21.6px | 0px | Navigation items, large labels |
+| Button / Label XS | Graphik Web | 13px | 500 | 14.3px | 0.5px | Button text, labels, small emphasis |
+| Body | Graphik Web | 16px | 400 | 21.6px | 0px | Primary body text, default paragraphs |
+| Body Compact | Graphik Web | 13px | 400 | 17.55px | 0px | Smaller body text, supplementary content |
+| Caption XS | Graphik Web | 11px | 500 | 13.75px | 0px | Captions, form hints, tiny labels |
+| Link | Graphik Web | 16px | 400 | 21.6px | 0px | Inline links, hypertext |
 
 ### Principles
-- **Single typeface philosophy:** pplxSans is used exclusively across all text roles, ensuring consistency and reducing cognitive load.
-- **Weight-based hierarchy:** Font weight (400, 500, 600) and size combinations create visual priority without introducing multiple families.
-- **Generous line height:** All line heights are set 150% of font size (or greater) to maximize readability and reduce eye strain during extended reading.
-- **Optimal measure:** Body text sits at 16px with 24px line height, supporting reading speeds of 200–250 words per minute.
-- **Disabled text:** Reduced opacity (`rgba(39, 37, 30, 0.5)`) replaces color shifts for disabled typography, maintaining family consistency.
+- **Hierarchy through size and weight**: Font sizes create clear visual hierarchy, with serif fonts reserved for high-impact headlines.
+- **Contrast pairing**: Serif (Means Web) for headlines against sans-serif (Graphik Web) body creates visual distinction.
+- **Readability first**: Line heights consistently generous (1.2–1.35 ratio) to ensure comfortable reading on screens.
+- **Consistency in spacing**: Letter spacing minimal but consistent, allowing word spacing to drive rhythm.
+- **Weight discipline**: Only two weights used (400 regular, 500 medium/bold) to maintain simplicity and reduce cognitive load.
 
 ## 4. Component Stylings
 
 ### Buttons
 
-**Primary Button (Solid Teal)**
-- Background: `#016A71`
-- Text Color: `#FFFFFF`
-- Font Size: `16px`
-- Font Weight: `500`
-- Font Family: `pplxSans`
-- Padding: `12px 24px`
-- Border Radius: `12px`
-- Border: `1px solid #016A71`
-- Box Shadow: `rgba(0, 0, 0, 0.08) 0px 1px 2px 0px`
-- Height: `40px`
-- Line Height: `24px`
-- Hover State: Background `#014F54`, Box Shadow `rgba(0, 0, 0, 0.12) 0px 2px 4px 0px`
-- Active State: Background `#013B40`
-- Disabled State: Background `rgba(1, 106, 113, 0.5)`, Color `rgba(255, 255, 255, 0.6)`
+#### Primary Button
+- **Background**: `#FFE01B`
+- **Text Color**: `#000000`
+- **Font**: Graphik Web, 13px, weight 500
+- **Padding**: `16px 24px 16px 24px`
+- **Border Radius**: `44px`
+- **Border**: none
+- **Line Height**: 14.3px
+- **Hover State**: Background `#E6CB00`, text remains `#000000`
+- **Active State**: Background `#CCB000`, slight inset shadow
+- **Disabled State**: Background `#F0E8A0` (40% opacity), text `#B3A800` (60% opacity)
 
-**Secondary Button (Gray Ghost)**
-- Background: `rgba(39, 26, 0, 0.035)`
-- Text Color: `rgba(39, 37, 30, 0.65)`
-- Font Size: `16px`
-- Font Weight: `500`
-- Font Family: `pplxSans`
-- Padding: `12px 24px`
-- Border Radius: `12px`
-- Border: `1px solid rgba(39, 26, 0, 0.14)`
-- Box Shadow: `none`
-- Height: `40px`
-- Line Height: `24px`
-- Hover State: Background `rgba(39, 26, 0, 0.08)`, Border `rgba(39, 26, 0, 0.25)`
-- Active State: Background `rgba(39, 26, 0, 0.12)`
-- Disabled State: Color `rgba(39, 37, 30, 0.35)`, Background `rgba(39, 26, 0, 0.02)`
+#### Secondary Button
+- **Background**: `#FFFFFF`
+- **Text Color**: `#231E15`
+- **Font**: Graphik Web, 13px, weight 500
+- **Padding**: `16px 24px 16px 24px`
+- **Border Radius**: `44px`
+- **Border**: `2px solid #231E15`
+- **Line Height**: 14.3px
+- **Box Shadow**: none
+- **Hover State**: Background `#F6F6F4`, border remains `#231E15`
+- **Active State**: Background `#DBD9D2`
+- **Disabled State**: Background `#FFFFFF`, text `#BCBAB6`, border `#BCBAB6`
 
-**Ghost Button (Icon / Minimal)**
-- Background: `rgba(0, 0, 0, 0)`
-- Text Color: `rgba(39, 37, 30, 0.5)`
-- Font Size: `16px`
-- Font Weight: `400`
-- Font Family: `pplxSans`
-- Padding: `0px 0px 0px 0px`
-- Border Radius: `6px`
-- Border: `0px solid transparent`
-- Box Shadow: `none`
-- Height: `24px`
-- Width: `24px`
-- Line Height: `24px`
-- Hover State: Background `rgba(39, 26, 0, 0.05)`, Color `rgba(39, 37, 30, 0.7)`
-- Active State: Color `rgba(39, 37, 30, 0.85)`
-- Disabled State: Color `rgba(39, 37, 30, 0.25)`
-
-**Icon Button (Square Container)**
-- Background: `rgba(0, 0, 0, 0)`
-- Text Color: `rgba(39, 37, 30, 0.65)`
-- Font Size: `16px`
-- Font Weight: `400`
-- Font Family: `pplxSans`
-- Padding: `4px 4px 4px 4px`
-- Border Radius: `12px`
-- Border: `0px solid rgba(39, 26, 0, 0.14)`
-- Box Shadow: `none`
-- Height: `32px`
-- Width: `32px`
-- Line Height: `24px`
-- Hover State: Background `rgba(39, 26, 0, 0.08)`
-- Active State: Background `rgba(39, 26, 0, 0.12)`
+#### Ghost Button
+- **Background**: transparent
+- **Text Color**: `#004E56`
+- **Font**: Graphik Web, 13px, weight 500
+- **Padding**: `8px 12px 8px 12px`
+- **Border Radius**: `3px`
+- **Border**: `1px solid #004E56`
+- **Line Height**: 14.3px
+- **Box Shadow**: none
+- **Hover State**: Background `#F6F6F4`, text and border remain `#004E56`
+- **Active State**: Background `#DBD9D2`
 
 ### Cards & Containers
 
-**Information Card**
-- Background: `rgba(39, 26, 0, 0.035)`
-- Text Color: `#000000`
-- Font Size: `16px`
-- Font Weight: `400`
-- Font Family: `pplxSans`
-- Padding: `16px 16px 16px 16px`
-- Border Radius: `11px`
-- Border: `1px solid rgba(39, 26, 0, 0.14)`
-- Box Shadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`
-- Line Height: `24px`
-- Min Height: `88px`
-- Hover State: Background `rgba(39, 26, 0, 0.06)`, Border `rgba(39, 26, 0, 0.2)`
+#### Standard Card
+- **Background**: `#FFFFFF`
+- **Text Color**: `#000000`
+- **Padding**: `24px 16px 24px 16px`
+- **Border Radius**: `10px`
+- **Border**: `1px solid #BCBAB6`
+- **Box Shadow**: `rgba(36, 28, 21, 0.15) 0px 0px 20px 3px`
+- **Line Height**: 21.6px
+- **Hover State**: Box shadow intensifies to `rgba(36, 28, 21, 0.25) 0px 4px 24px 4px`
 
-**Surface Container**
-- Background: `#FFFFFF`
-- Text Color: `#000000`
-- Font Size: `16px`
-- Font Weight: `400`
-- Font Family: `pplxSans`
-- Padding: `0px`
-- Border Radius: `0px`
-- Border: `0px solid transparent`
-- Box Shadow: `none`
-- Line Height: `24px`
+#### Elevated Card (Premium, Featured)
+- **Background**: `#FFFFFF`
+- **Text Color**: `#000000`
+- **Padding**: `32px 24px 32px 24px`
+- **Border Radius**: `10px`
+- **Border**: none
+- **Box Shadow**: `rgba(35, 30, 21, 0.15) 0px 0px 20px 3px`
+- **Line Height**: 21.6px
 
-**Elevated Card**
-- Background: `#FFFFFF`
-- Text Color: `#000000`
-- Font Size: `16px`
-- Font Weight: `400`
-- Font Family: `pplxSans`
-- Padding: `24px 24px 24px 24px`
-- Border Radius: `12px`
-- Border: `1px solid rgba(39, 26, 0, 0.08)`
-- Box Shadow: `rgba(0, 0, 0, 0.08) 0px 1px 2px 0px`
-- Line Height: `24px`
-- Hover State: Box Shadow `rgba(0, 0, 0, 0.12) 0px 2px 8px 0px`
+#### Dark Section (Premium Hero)
+- **Background**: `#231E15`
+- **Text Color**: `#FFFFFF`
+- **Padding**: `80px 40px 80px 40px`
+- **Border Radius**: `0px`
+- **Border**: none
+- **Box Shadow**: none
 
 ### Inputs & Forms
 
-**Text Input**
-- Background: `#FFFFFF`
-- Text Color: `#000000`
-- Border Color: `rgba(39, 26, 0, 0.14)`
-- Font Size: `16px`
-- Font Weight: `400`
-- Font Family: `pplxSans`
-- Padding: `12px 16px 12px 16px`
-- Border Radius: `8px`
-- Border: `1px solid rgba(39, 26, 0, 0.14)`
-- Height: `44px`
-- Line Height: `24px`
-- Focus State: Border `rgba(1, 106, 113, 0.5)`, Box Shadow `0 0 0 3px rgba(1, 106, 113, 0.08)`
-- Hover State: Border `rgba(39, 26, 0, 0.25)`
-- Error State: Border `#E10600`, Background `rgba(225, 6, 0, 0.02)`
+#### Text Input
+- **Background**: `#FFFFFF`
+- **Text Color**: `#000000`
+- **Border**: `2px solid #BCBAB6`
+- **Border Radius**: `4px`
+- **Padding**: `12px 12px 12px 12px`
+- **Font**: Graphik Web, 13px, weight 400
+- **Line Height**: 17.55px
+- **Placeholder Color**: `#BCBAB6`
+- **Focus State**: Border `2px solid #004E56`, box shadow `0px 0px 0px 3px rgba(0, 78, 86, 0.1)`
+- **Error State**: Border `2px solid #E12437`, background tint `rgba(225, 36, 55, 0.05)`
+- **Disabled State**: Background `#F6F6F4`, border `#DBD9D2`, text `#BCBAB6`
 
-**Placeholder Text**
-- Color: `rgba(39, 37, 30, 0.5)`
-- Font Size: `16px`
-- Font Weight: `400`
+#### Dropdown / Select
+- **Background**: `#FFFFFF`
+- **Text Color**: `#000000`
+- **Border**: `2px solid #BCBAB6`
+- **Border Radius**: `4px`
+- **Padding**: `12px 12px 12px 12px`
+- **Font**: Graphik Web, 13px, weight 400
+- **Icon Color**: `#575757`
+- **Focus State**: Border `2px solid #004E56`
+- **Open State**: Box shadow `rgba(36, 28, 21, 0.12) 0px 4px 12px 0px`
 
-**Search Input (Primary)**
-- Background: `#FFFFFF`
-- Text Color: `#000000`
-- Border Color: `rgba(39, 26, 0, 0.14)`
-- Font Size: `16px`
-- Font Weight: `400`
-- Font Family: `pplxSans`
-- Padding: `16px 16px 16px 16px`
-- Border Radius: `12px`
-- Border: `1px solid rgba(39, 26, 0, 0.14)`
-- Min Height: `56px`
-- Box Shadow: `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px`
-- Focus State: Border `rgba(1, 106, 113, 0.5)`, Box Shadow `0 0 0 4px rgba(1, 106, 113, 0.1)`
+#### Checkbox
+- **Default State**: `#FFFFFF` background, `2px solid #BCBAB6` border, `4px` border radius
+- **Checked State**: `#004E56` background, no visible border, checkmark in `#FFFFFF`
+- **Focus State**: Background `#FFFFFF`, border `2px solid #004E56`, outline `0px 0px 0px 3px rgba(0, 78, 86, 0.1)`
+- **Hover State**: Border `2px solid #004E56`
+- **Disabled State**: Background `#F6F6F4`, border `#DBD9D2`, opacity `0.6`
 
 ### Navigation
 
-**Sidebar Navigation**
-- Background: `rgba(39, 26, 0, 0.035)`
-- Text Color: `#000000`
-- Font Size: `16px`
-- Font Weight: `400`
-- Font Family: `pplxSans`
-- Padding: `0px 0px 0px 0px`
-- Border Radius: `0px`
-- Border: `1px solid rgba(39, 26, 0, 0.07)`
-- Height: `100vh`
-- Width: `240px`
-- Line Height: `24px`
+#### Top Navigation Bar
+- **Background**: `#FFFFFF`
+- **Text Color**: `#000000`
+- **Height**: `68px`
+- **Padding**: `12px 16px 12px 16px`
+- **Border Bottom**: `1px solid #DBD9D2`
+- **Font**: Graphik Web, 16px, weight 400
+- **Logo**: Height `36px`, maintains aspect ratio
 
-**Navigation Item (Active)**
-- Background: `rgba(1, 106, 113, 0.08)`
-- Text Color: `#016A71`
-- Padding: `12px 16px 12px 16px`
-- Border Radius: `8px`
-- Border Left: `3px solid #016A71`
-- Font Weight: `500`
+#### Navigation Link (Default)
+- **Color**: `#000000`
+- **Font**: Graphik Web, 16px, weight 400
+- **Text Decoration**: none
+- **Hover State**: Color `#004E56`, slight underline at `4px` thickness
+- **Active State**: Color `#004E56`, underline `2px solid #004E56`
 
-**Navigation Item (Default)**
-- Background: `transparent`
-- Text Color: `rgba(39, 37, 30, 0.65)`
-- Padding: `12px 16px 12px 16px`
-- Border Radius: `8px`
-- Border: `0px`
-- Font Weight: `400`
-- Hover State: Background `rgba(39, 26, 0, 0.08)`
+#### Navigation Link (Dark Context)
+- **Color**: `#FFFFFF`
+- **Font**: Graphik Web, 16px, weight 400
+- **Hover State**: Color `#FFE01B`
+- **Active State**: Color `#FFE01B`, underline `2px solid #FFE01B`
 
-**Top Navigation Bar**
-- Background: `#016A71`
-- Text Color: `#FFFFFF`
-- Height: `56px`
-- Padding: `0px 24px 0px 24px`
-- Border Radius: `0px`
-- Border: `0px`
-- Box Shadow: `none`
-- Z-index: `500`
+#### Mega Menu Dropdown
+- **Background**: `#FFFFFF`
+- **Text Color**: `#000000`
+- **Border**: none
+- **Border Radius**: `0px`
+- **Box Shadow**: `rgba(36, 28, 21, 0.12) 0px 4px 12px 0px`
+- **Padding**: `24px 32px 24px 32px`
+- **Z-index**: `50`
 
-### Badges
+### Badges & Pills
 
-**Status Badge (Success)**
-- Background: `rgba(83, 158, 85, 0.1)`
-- Text Color: `#539E55`
-- Font Size: `12px`
-- Font Weight: `500`
-- Padding: `4px 8px 4px 8px`
-- Border Radius: `6px`
-- Border: `1px solid rgba(83, 158, 85, 0.3)`
+#### Pill Badge (Toggle/Filter)
+- **Background**: `#FFFFFF`
+- **Text Color**: `#000000`
+- **Border**: `1px solid #BCBAB6`
+- **Border Radius**: `200px`
+- **Padding**: `8px 16px 8px 16px`
+- **Font**: Graphik Web, 13px, weight 500
+- **Active State**: Background `#004E56`, text `#FFFFFF`, border `#004E56`
+- **Hover State**: Border `#004E56`, text `#004E56`
 
-**Status Badge (Error)**
-- Background: `rgba(225, 6, 0, 0.1)`
-- Text Color: `#E10600`
-- Font Size: `12px`
-- Font Weight: `500`
-- Padding: `4px 8px 4px 8px`
-- Border Radius: `6px`
-- Border: `1px solid rgba(225, 6, 0, 0.3)`
+#### Success Badge
+- **Background**: `#AADDAA` (20% opacity)
+- **Text Color**: `#004E56`
+- **Border Radius**: `200px`
+- **Padding**: `6px 12px 6px 12px`
+- **Font**: Graphik Web, 11px, weight 500
 
-**New Feature Badge**
-- Background: `#016A71`
-- Text Color: `#FFFFFF`
-- Font Size: `11px`
-- Font Weight: `600`
-- Padding: `3px 8px 3px 8px`
-- Border Radius: `4px`
-- Border: `0px`
-- Letter Spacing: `0.5px`
+#### Warning Badge
+- **Background**: `#FFE01B` (20% opacity)
+- **Text Color**: `#8B7000`
+- **Border Radius**: `200px`
+- **Padding**: `6px 12px 6px 12px`
+- **Font**: Graphik Web, 11px, weight 500
+
+#### Error Badge
+- **Background**: `#E12437` (20% opacity)
+- **Text Color**: `#8B0000`
+- **Border Radius**: `200px`
+- **Padding**: `6px 12px 6px 12px`
+- **Font**: Graphik Web, 11px, weight 500
 
 ## 5. Layout Principles
 
 ### Spacing System
-- **Base Unit:** `4px`
-- **Scale:** `4px`, `8px`, `12px`, `16px`, `24px`, `32px`, `48px`, `64px`, `92px`
 
-**Usage Context:**
-- `4px`: Micro spacing between icon and text, tight padding on icon-only buttons
-- `8px`: Spacing between inline elements, small button padding
-- `12px`: Standard input padding, internal card spacing
-- `16px`: Primary button padding, card padding, section margins
-- `24px`: Section spacing, large component padding, content containers
-- `32px`: Major section breaks, sidebar padding
-- `48px`: Large content blocks, full-width section gaps
-- `64px`: Hero sections, major layout separations
-- `92px`: Top/bottom spacing for full-screen hero areas
+**Base Unit**: `4px`
+
+**Spacing Scale**:
+- `4px` — Extra tight spacing for stacked elements or micro-layouts
+- `8px` — Tight spacing for closely related components
+- `12px` — Compact spacing for form fields and small groups
+- `16px` — Default spacing for moderate separation
+- `20px` — Comfortable spacing for content groups (inferred)
+- `24px` — Standard spacing for card padding and section margins
+- `32px` — Generous spacing between major sections
+- `40px` — Extra-large spacing for content separation
+- `64px` — Hero sections and major visual breaks
+- `80px` — Maximum spacing for dark hero sections
+- `108px` — Extra-large vertical spacing (inferred for premium content)
+
+**Usage Context**:
+- **Buttons**: `16px` horizontal padding, `12px` vertical (compact) to `16px` vertical (comfortable)
+- **Cards**: `24px` standard padding, `32px` for premium or featured cards
+- **Form Fields**: `12px` padding with `16px` gap between fields
+- **Sections**: `40px` to `64px` margin between major content blocks
+- **Whitespace**: Minimum `20px` breathing room around focal content
 
 ### Grid & Container
-- **Max Width:** `1280px` for content area (excluding sidebars)
-- **Sidebar Width:** `240px` (fixed left navigation)
-- **Gutter Width:** `24px` (spacing between columns)
-- **Column Strategy:** 12-column grid with flexible gutters; responsive collapsing on mobile
-- **Section Pattern:** Full-width colored containers with centered max-width content blocks; primary search area spans full width above footer
+
+- **Maximum Container Width**: `1440px` (full-width web standard)
+- **Column Strategy**: 12-column fluid grid with `16px` gutters
+- **Content Margins**: `40px` left/right on desktop (maintaining readable line length)
+- **Mobile Margins**: `16px` left/right on tablet and below
+
+**Section Patterns**:
+- **Hero**: Full bleed to viewport edges with `80px` vertical padding
+- **Content Sections**: Centered container with `40px` padding sides
+- **Pricing/Cards**: Flex grid with `20px` gap between items
+- **Testimonials**: Full-width dark background with centered content container
 
 ### Whitespace Philosophy
-Perplexity emphasizes breathing room and visual clarity through strategic whitespace. Content is never crowded; vertical rhythm uses the 24px line-height as the base unit for spacing between blocks. The search interface has large empty space around the primary input to create psychological focus. Cards and containers are given space to "float" within the layout rather than touching edges, and the neutral background tints separate zones without hard dividers.
+
+Mailchimp's design prioritizes breathing room and visual clarity through deliberate whitespace. Large margins between sections prevent cognitive overload, while generous padding inside components makes interface elements feel spacious and inviting. Whitespace is not empty space but rather an active design element that guides focus, improves readability, and creates moments of visual rest. The hierarchy of spacing (from `4px` micro-adjustments to `108px` macro breaks) ensures logical grouping and clear content relationships.
 
 ### Border Radius Scale
-- `4px`: Small badges, utility buttons, minimal UI elements
-- `6px`: Icon buttons, compact form controls
-- `8px`: Navigation items, input fields, small cards
-- `11px`: Standard information cards, medium containers
-- `12px`: Large buttons, modal dialogs, prominent cards
-- `9999px`: Fully rounded pill buttons, avatar circles, extreme values
+
+- `0px` — Navigation bars, hero sections, full-width containers
+- `3px` — Small buttons, minimal UI adjustments
+- `4px` — Form inputs, compact components
+- `10px` — Card corners, moderately rounded containers
+- `44px` — Pill buttons, fully rounded call-to-action elements
+- `200px` — Badge pills, maximum rounding for emphasis
 
 ### Border Widths
-- **Thin:** `1px` — Standard borders on inputs, cards, and containers; default visual boundary
-- **Medium:** `2px` — Accent borders, active navigation indicators, emphasis states
-- **Thick:** `3px` — Left border on active navigation items, strong visual emphasis
+
+- **Thin**: `1px` — Card borders, subtle dividers, light visual separation
+- **Medium**: `2px` — Form field borders, active states, focused input emphasis
+- **Thick**: `3px` — Borders on focus states for accessibility (inferred from accessibility standards)
 
 ## 6. Depth & Elevation
 
 | Level | Treatment | Use |
 |-------|-----------|-----|
-| Surface | No shadow | Flat page backgrounds, base layer surfaces |
-| Raised | `rgba(0, 0, 0, 0.05) 0px 0px 0px 1px` | Card borders, subtle lift for grouped content |
-| Floating | `rgba(0, 0, 0, 0.08) 0px 1px 2px 0px` | Information cards, button hover states, tooltips |
-| Elevated | `rgba(0, 0, 0, 0.12) 0px 2px 8px 0px` | Modals, dropdowns, prominent overlays on hover |
-| High | `oklch(0.5525 0.085 207.66 / 0) 0px 0px 36px 4px` | Full-screen modals, high-priority overlays |
+| Base | No shadow, flat surface | Text, icons, inline elements |
+| Surface | `rgba(36, 28, 21, 0.12) 0px 4px 12px 0px` | Dropdown menus, floating panels |
+| Elevated | `rgba(35, 30, 21, 0.15) 0px 0px 20px 3px` | Standard cards, modals, lifted containers |
+| Prominent | `rgba(35, 30, 21, 0.25) 0px 4px 24px 4px` | Featured cards, hover states, maximum emphasis |
 
-**Shadow Philosophy:** Shadows are subtle and avoid harsh darkness. The system uses layered translucent black at varying opacities and blur radii to create perceived depth without visual weight. Shadows increase only slightly on interaction (hover/focus) to avoid jarring changes. Larger blur radii and spread values create "floating" effects for modals, while small blur values keep inline elements grounded.
+**Shadow Philosophy**:
+Mailchimp employs subtle, directional shadows that suggest gentle lifting rather than dramatic depth. Shadows are warm-toned (using `rgba(35, 30, 21, ...)`) to align with the brown-toned palette, creating cohesion. The system avoids harsh black shadows, instead using soft browns with controlled opacity to maintain visual harmony. Shadows increase in blur radius and spread slightly as elevation increases, creating a natural perspective hierarchy. Shadows are minimal on surfaces to reduce visual noise and maintain focus on content.
 
 ### Opacity Levels
-- **Full:** `1.0` (100%) — Default solid elements, primary text, active states
-- **High:** `0.85` (85%) — Secondary text, active hover states
-- **Medium-High:** `0.70` (70%) — Tertiary text, soft interactive feedback
-- **Medium:** `0.50` (50%) — Disabled elements, muted icons, placeholder text
-- **Low:** `0.20` (20%) — Overlay backgrounds, subtle background tints
-- **Minimal:** `0.035` (3.5%) — Card and container background tints, barely perceptible layers
+
+- **1%** (`0.01`) — Barely perceptible, used for extremely subtle backgrounds or overlays
+- **60%** (`0.60`) — Disabled or inactive states, reduced emphasis
+- **80%** (`0.80`) — Secondary emphasis, hover states on muted elements
+- **100%** (`1.00`) — Full opacity for primary content and active states
 
 ### Z-index / Layering
-- **Base:** `1` — Default stacking context, regular page content
-- **Dropdown (Low):** `10` — Inline dropdowns, tooltips below other UI
-- **Dropdown (Medium):** `20` — Contextual menus, secondary overlays
-- **Dropdown (High):** `30` — Primary dropdowns, select menus above most content
-- **Sticky:** `500` — Fixed navigation bars, sticky headers that persist on scroll
-- **Modal:** `1000` — Modal dialogs, full-screen overlays, highest interactable content
-- **Toast:** `1100` — Notification toasts, alerts that appear above modals
+
+- **Base Layer**: `1` — Standard page content, default z-stacking context
+- **Elevated Content**: `2–3` — Cards, containers with shadow elevation
+- **Dropdown Menus**: `10–12` — Dropdowns, floating menus above content
+- **Sticky Elements**: `100` — Sticky navigation, persistent headers
+- **Modal Overlay**: `490` — Modal backdrop layer (high but below modal)
+- **Modal / Dialog**: `500` — Modal dialogs, full-screen overlays, top layer
+
+**Layering Strategy**: Z-index values are spaced in increments of 10 to allow flexibility for component combinations. Sticky navigation at `100` sits above most content but below modals at `500`, ensuring modals always remain accessible and focused.
 
 ## 7. Do's and Don'ts
 
 ### Do
-- Use the teal accent (`#016A71`) exclusively for primary CTAs and key interactive states; this color is reserved for the highest-priority actions.
-- Maintain the soft warm-brown tint (`rgba(39, 26, 0, 0.035)`) for card and container backgrounds to create subtle visual hierarchy without harsh contrast.
-- Apply semi-transparent overlays (`rgba(39, 37, 30, 0.5)`) for disabled states rather than desaturating colors; this maintains brand consistency.
-- Use pplxSans exclusively across all text roles; do not mix typeface families.
-- Respect the `16px` body text size and `24px` line height as the readability baseline; only reduce for captions and metadata.
-- Group related spacing using multiples of `4px` (4, 8, 12, 16, 24, 32, etc.) to maintain visual rhythm.
-- Apply subtle shadows (`rgba(0, 0, 0, 0.05)` to `rgba(0, 0, 0, 0.12)`) for depth; avoid harsh drop shadows.
-- Use border radius `12px` for all primary buttons and large interactive elements for consistency.
-- Ensure minimum touch targets of `44px` for mobile; icon-only buttons can be `32px` minimum.
-- Test all color combinations against WCAG AA contrast standards (minimum 4.5:1 for body text).
+- **Use the primary teal** (`#004E56`) for interactive elements that require secondary emphasis or for building user trust in links and navigation.
+- **Reserve the bright yellow** (`#FFE01B`) exclusively for primary call-to-action buttons and high-priority actions to maintain urgency and consistency.
+- **Pair serif headlines (Means Web) with sans-serif body text (Graphik Web)** to create visual contrast and enhance readability hierarchy.
+- **Maintain minimum `24px` padding** on all cards and containers for comfortable content consumption.
+- **Use the full spacing scale** from `4px` to `80px` — don't invent intermediate values that break the system rhythm.
+- **Apply shadows consistently** from the predefined elevation scale to maintain visual cohesion across lifted components.
+- **Keep text at `16px` minimum** for body content on screens to ensure comfortable reading without zoom.
+- **Group related form inputs** with `16px` vertical gaps to establish logical input relationships.
+- **Test link colors** (`#004E56`) for sufficient contrast (7:1 ratio) against all backgrounds for WCAG AA compliance.
 
 ### Don't
-- Do not use pure blue (`#0066FF` or similar) in place of the teal accent; the brand accent is specifically `#016A71`.
-- Avoid using accent colors (rust red, coral, warm brown) for main CTAs or navigation; reserve these for status states and secondary UI.
-- Do not stack multiple shadow layers; use only one shadow value per element at each elevation level.
-- Avoid reducing font size below `12px` for body text; smaller text strains readability in answer engines.
-- Do not use opacity to create color variations; instead use dedicated semantic colors or adjust alpha values on the base color.
-- Avoid fully desaturating disabled elements; use semi-transparent neutral overlays (`rgba(39, 37, 30, 0.5)`) instead.
-- Do not introduce new typefaces; pplxSans is the only font family in the system.
-- Avoid adding borders thicker than `2px` except for the `3px` accent left border on active navigation.
-- Do not use the warm brown undertones (`#271A00`, `#27251E`) as primary text colors; reserve these for borders and subtle fills only.
-- Avoid spacing elements with arbitrary values; always round to the nearest multiple of `4px`.
+- **Do not mix accent colors carelessly** — reserve yellow for primary CTAs, teal for secondary actions, and other accent colors only for category differentiation or data visualization.
+- **Do not reduce padding below `12px`** on interactive elements; this harms touch targets and visual breathing room.
+- **Do not use borders thicker than `2px`** except for critical focus states; heavy borders create visual clutter.
+- **Do not create custom shadows** — always use the predefined elevation scale to maintain visual consistency.
+- **Do not use the serif font (Means Web) for body text** — it reduces readability and defeats the typographic contrast strategy.
+- **Do not apply rounded corners** (`border-radius > 4px`) to form inputs except pill-shaped buttons; sharp corners signal functional input areas.
+- **Do not set line height below `1.2x font-size`** — this damages readability and violates accessibility guidelines.
+- **Do not layer multiple opacity levels** (e.g., semi-transparent colors on semi-transparent backgrounds) — this creates muddy, unpredictable results.
+- **Do not exceed container max-width of `1440px`** on desktop; wider layouts create uncomfortable reading line lengths.
+- **Do not create hover states that differ more than one shade** from the default state — extreme color shifts feel broken or like interactive errors.
 
 ## 8. Responsive Behavior
 
 ### Breakpoints
 
 | Breakpoint | Width | Key Changes |
-|-----------|-------|---|
-| Mobile | 320px – 599px | Single-column layout, sidebar collapses to hamburger menu, full-width cards, reduced padding (`12px`), font sizes unchanged |
-| Tablet | 600px – 999px | Two-column grid, sidebar becomes collapsible panel, cards stack in 2-column layout, padding increases to `16px` |
-| Desktop | 1000px – 1279px | Three-column layout possible, fixed sidebar (240px), main content area max-width `800px`, standard padding `24px` |
-| Wide Desktop | 1280px+ | Full layout with optional right panel, content max-width `1280px`, sidebar fixed, generous gutters `32px` |
+|------------|-------|-------------|
+| Mobile | 375px–599px | Single-column layout, `16px` horizontal padding, stacked navigation, `32px` max section padding, font scales down 10–15% |
+| Tablet | 600px–1024px | Two-column grid possible, `24px` horizontal padding, expandable navigation menu, `40px` section padding |
+| Desktop | 1025px–1440px | Full multi-column layout, `40px` horizontal padding, full navigation bar visible, `64px` max section padding |
+| Large Desktop | 1441px+ | Container max-width `1440px` centered, typography may increase 5–10% for comfort, maximum `80px` section padding |
 
 ### Touch Targets
-- **Minimum Touch Target:** `44px` × `44px` for primary interactive elements (buttons, links, input fields)
-- **Icon Button Minimum:** `32px` × `32px` for compact icon-only buttons
-- **Spacing Between Targets:** Minimum `8px` separation to prevent accidental touches
-- **Text Link Minimum:** `40px` height for inline text links with vertical padding
-- **Form Input Height:** `44px` minimum for all text inputs and select controls on mobile
+
+- **Minimum Touch Target**: `44px × 44px` (platform standard for accessibility)
+- **Optimal Touch Target**: `48px × 48px` (comfortable spacing for fingers)
+- **Button Padding**: At least `12px` horizontal, `12px` vertical to reach minimum target size
+- **Link Spacing**: Minimum `16px` gap between adjacent interactive links to prevent mis-taps
+- **Form Inputs**: Minimum `44px` height; `16px` padding achieves this with standard font size
 
 ### Collapsing Strategy
-- **Mobile (320px–599px):** Sidebar navigation converts to bottom sheet or hamburger menu; main content becomes full-width single column; cards stack vertically; hero search input remains full-width; secondary action buttons move below primary actions; large spacing values reduce to `16px` vertically.
-- **Tablet (600px–999px):** Sidebar becomes a collapsible panel triggered by hamburger icon; two-column card layout; main content area limits to `600px` width; navigation items display horizontally when sidebar is collapsed.
-- **Desktop (1000px+):** Fixed left sidebar (240px) visible; main content area flows alongside; cards display in 2–3 column grid; full spacing system applies; search and hero elements maintain prominence at top.
-- **Hero Search Behavior:** On mobile, search input extends full-width with reduced padding; on tablet/desktop, search input centers and maintains `600px` max-width, with optional suggestion cards beside or below.
+
+**Navigation**:
+- Desktop: Horizontal menu bar, all items visible, `68px` height
+- Tablet (768px): Hamburger menu toggle, megamenu collapses to vertical stack
+- Mobile: Full-screen off-canvas menu or stacked vertical navigation
+
+**Cards & Grids**:
+- Desktop: 3+ column grid with `20px` gap
+- Tablet: 2-column grid with `16px` gap
+- Mobile: Single column, full width with `16px` padding on sides
+
+**Spacing**:
+- Desktop: `80px` vertical section margins
+- Tablet: `40px` vertical section margins
+- Mobile: `24px` vertical section margins
+
+**Typography**:
+- Desktop Display XL: `64px` → Tablet: `48px` → Mobile: `36px`
+- Desktop Display L: `48px` → Tablet: `40px` → Mobile: `32px`
+- Desktop Heading L: `24px` → Tablet: `20px` → Mobile: `18px`
+- Body remains `16px` minimum across all sizes
+
+**Form Inputs**:
+- Desktop: Standard `44px` height
+- Mobile: Minimum `48px` height with `20px` padding for larger touch targets
 
 ## 9. Agent Prompt Guide
 
 ### Quick Color Reference
-- **Primary CTA:** Teal (`#016A71`) — Use for main action buttons, primary form submit, active navigation
-- **Background (Page):** Off-White (`#FDFBFA`) or White (`#FFFFFF`) — Primary page background
-- **Background (Container):** Subtle Surface Tint (`rgba(39, 26, 0, 0.035)`) — Secondary containers, cards
-- **Text (Primary):** Black (`#000000`) — All body text, headings, primary UI text
-- **Text (Secondary):** Dark Brown Muted (`rgba(39, 37, 30, 0.65)`) — Secondary labels, breadcrumbs, helper text
-- **Text (Tertiary):** Dark Brown Faint (`rgba(39, 37, 30, 0.5)`) — Placeholder text, disabled buttons, muted icons
-- **Border (Standard):** Dark Brown Border (`rgba(39, 26, 0, 0.14)`) — Input borders, card dividers, subtle container edges
-- **Border (Accent):** Teal (`#016A71`) — Active navigation left border, focus ring accent
-- **Success State:** Green (`#539E55`) — Success messages, completed checkmarks, positive confirmations
-- **Error State:** Red (`#E10600`) — Error messages, validation failures, destructive warnings
-- **Top Bar:** Teal (`#016A71`) background with White (`#FFFFFF`) text
+
+- **Primary CTA** (High Urgency): Bright Yellow (`#FFE01B`)
+- **Secondary Action**: White with Border (`#FFFFFF` with `#231E15` outline)
+- **Link / Navigation**: Primary Teal (`#004E56`)
+- **Body Text**: Black (`#000000`)
+- **Secondary Text**: Dark Gray (`#575757`)
+- **Background / Card**: White (`#FFFFFF`)
+- **Section Background**: Off-White (`#F6F6F4`)
+- **Dark Section**: Deep Brown (`#231E15`)
+- **Border / Divider**: Light Gray (`#BCBAB6`)
+- **Success**: Sage Green (`#AADDAA`)
+- **Warning**: Bright Yellow (`#FFE01B`)
+- **Error**: Error Red (`#E12437`)
 
 ### Iteration Guide
-1. **All text is set in pplxSans at `16px` (body), `400` weight, `24px` line-height.** Headings increase size and weight only; do not introduce new typefaces.
-2. **Every color must be UPPERCASE hex (`#016A71`) or use semantic rgba values like `rgba(39, 26, 0, 0.035)`.** Never use lowercase or abbreviations.
-3. **Spacing always uses multiples of `4px`:** 4, 8, 12, 16, 24, 32, 48, 64, 92. No arbitrary values.
-4. **Border radius follows the scale:** 4px (badges), 6px (icon buttons), 8px (inputs), 11px (cards), 12px (large buttons/modals), 9999px (pills/circles).
-5. **Buttons are `40px` height minimum** with padding `12px 24px` (primary/secondary) or `4px 4px` (icon buttons at `32px` height).
-6. **Card padding is consistently `16px`** with border radius `11px` and border `1px solid rgba(39, 26, 0, 0.14)`.
-7. **Shadows only use the three defined levels:** subtle (`0.05`), floating (`0.08`), elevated (`0.12`). No custom shadow values.
-8. **Primary interactive color is always teal (`#016A71`).** All secondary actions, alerts, and status use semantic colors; never substitute blue or other primaries.
-9. **Disabled state uses opacity overlay (`rgba(39, 37, 30, 0.5)`)** rather than color desaturation or graying.
-10. **Touch targets minimum `44px`, sidebar width fixed at `240px`, main content max-width `1280px`, search input `56px` height, sidebar nav background tinted (`rgba(39, 26, 0, 0.035)`).** No deviations without explicit design review.
+
+1. **Always start with typography**: Use Means Web (serif) for headlines with sizes `64px` (display), `48px` (h1), `40px` (h2), `24px` (h3). Use Graphik Web (sans-serif) for body at `16px`, buttons at `13px`. This hierarchy is non-negotiable.
+
+2. **Spacing is king**: Use the 4px base unit. Padding on cards is `24px`, buttons need `16px 24px`, forms need `12px`. Between sections: `40px` desktop, `24px` mobile. Never invent intermediate values.
+
+3. **Color is limited and intentional**: Yellow (`#FFE01B`) only for primary CTAs and warnings. Teal (`#004E56`) for links and secondary emphasis. Black (`#000000`) for text. White (`#FFFFFF`) for cards. Everything else supports these four core colors.
+
+4. **Shadows follow the elevation scale exactly**: Dropdown = `rgba(36, 28, 21, 0.12) 0px 4px 12px 0px`. Card = `rgba(35, 30, 21, 0.15) 0px 0px 20px 3px`. Hover/prominent = increase opacity to `0.25`. Do not create custom shadows.
+
+5. **Buttons must be pill-shaped** (`border-radius: 44px`) on desktop, with `16px 24px` padding minimum. Primary is yellow background, secondary is white with `2px border`. Ghost buttons are transparent with `1px border`, smaller at `border-radius: 3px`.
+
+6. **Inputs are subtle**: `border-radius: 4px`, `2px border #BCBAB6`, `12px padding`. On focus, border becomes `#004E56` and add a `3px` blue outline blur. Never darken input backgrounds.
+
+7. **Cards must breathe**: Minimum `24px` padding, `1px border #BCBAB6`, `border-radius: 10px`, and apply the card shadow. Dark sections (hero/premium) invert this: `#231E15` background, `#FFFFFF` text, no border, `80px padding`.
+
+8. **Responsive collapses cleanly**: Mobile uses `16px` margins, tablet uses `24px`, desktop uses `40px`. Typography scales down by 10–15% on mobile. Grids become single column on mobile, two-column on tablet, three+ on desktop.
+
+9. **Z-index is hierarchical, never arbitrary**: Base = 1, dropdowns = 10–12, sticky nav = 100, modals = 500. Use this ordering, no other values.
+
+10. **Line height and letter spacing stay constant**: All body text uses `1.35x line-height` ratio (e.g., `16px` text = `21.6px` line height). Letter spacing is `0px` for serif, `0.5px` for button labels. Accessibility demands this.
