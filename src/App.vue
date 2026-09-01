@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import axios from 'axios';
 
 const searchQuery = ref('');
+const inputError = ref('');
 const selectedFilter = ref('buku');
 const selectedYearFilter = ref('semua');
 const fromYear = ref('');
@@ -20,15 +21,20 @@ const yearOptions = [
 ];
 
 const handleSearch = async () => {
-  if (!searchQuery.value.trim()) return;
+  // Validasi jika input teks masih kosong
+  if (!searchQuery.value.trim()) {
+    inputError.value = 'Silakan masukkan kata kunci pencarian terlebih dahulu.';
+    return;
+  }
   
+  inputError.value = '';
   isLoading.value = true;
   errorMsg.value = '';
   results.value = [];
 
   try {
     const params = {
-      q: searchQuery.value,
+      q: searchQuery.value.trim(),
       type: selectedFilter.value,
     };
 
@@ -45,6 +51,12 @@ const handleSearch = async () => {
     errorMsg.value = 'Terjadi kesalahan saat mengambil data.';
   } finally {
     isLoading.value = false;
+  }
+};
+
+const onInput = () => {
+  if (inputError.value && searchQuery.value.trim()) {
+    inputError.value = '';
   }
 };
 </script>
@@ -65,20 +77,39 @@ const handleSearch = async () => {
     <main class="w-full max-w-2xl mt-8">
       <form @submit.prevent="handleSearch" class="flex flex-col gap-5">
         <!-- Input Capsule -->
-        <div class="relative flex items-center">
-          <input
-            v-model="searchQuery"
-            type="text"
-            placeholder="Ketik judul buku, jurnal, atau topik..."
-            class="w-full py-4 pl-6 pr-32 text-gray-900 bg-white border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-base"
-          />
-          <button
-            type="submit"
-            :disabled="isLoading"
-            class="absolute right-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-medium rounded-full transition-colors cursor-pointer"
+        <div class="flex flex-col gap-1.5">
+          <div class="relative flex items-center">
+            <input
+              v-model="searchQuery"
+              @input="onInput"
+              type="text"
+              placeholder="Ketik judul buku, jurnal, atau topik..."
+              :class="[
+                'w-full py-4 pl-6 pr-32 text-gray-900 bg-white border rounded-full shadow-sm focus:outline-none transition-all text-base',
+                inputError 
+                  ? 'border-red-500 ring-2 ring-red-100 focus:ring-2 focus:ring-red-400 focus:border-red-500' 
+                  : 'border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent'
+              ]"
+            />
+            <button
+              type="submit"
+              :disabled="isLoading"
+              class="absolute right-2 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-medium rounded-full transition-colors cursor-pointer"
+            >
+              {{ isLoading ? 'Mencari...' : 'Cari' }}
+            </button>
+          </div>
+
+          <!-- Alert Pesan Error Input -->
+          <div 
+            v-if="inputError" 
+            class="flex items-center gap-1.5 text-xs text-red-600 pl-4 animate-fade-in"
           >
-            {{ isLoading ? 'Mencari...' : 'Cari' }}
-          </button>
+            <svg class="w-4 h-4 shrink-0 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+            </svg>
+            <span class="font-medium">{{ inputError }}</span>
+          </div>
         </div>
 
         <!-- Filter Container -->
