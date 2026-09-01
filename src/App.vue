@@ -97,16 +97,13 @@ const clearSearch = () => {
 <template>
   <div class="min-h-screen bg-[#231E15] text-[#FAF9F6] flex flex-col items-center px-4 sm:px-8 py-12">
     <!-- Header Section -->
-    <header class="w-full max-w-3xl text-center pt-4 pb-4">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#2F291E] border border-[#473E30] text-xs text-[#FFE01B] font-medium mb-5">
-        <span class="w-2 h-2 rounded-full bg-[#FFE01B]"></span>
-        Pusat Referensi Akademik
-      </div>
+    <header class="w-full max-w-3xl text-center pt-6 pb-6">
       <h1 class="font-serif-heading text-4xl sm:text-6xl font-normal text-[#FAF9F6] tracking-tight leading-[1.15]">
         Cari Literatur
       </h1>
+      <div class="border-t-2 border-[#FFE01B] my-4 w-112.5 mx-auto border-dashed"></div>
       <p class="mt-4 text-base sm:text-lg text-[#DBD9D2] max-w-xl mx-auto leading-relaxed">
-        Eksplorasi ribuan buku referensi, artikel jurnal ilmiah, dan skripsi dalam satu antarmuka yang tenang dan terstruktur.
+        Eksplorasi Buku Referensi, Artikel Jurnal Ilmiah, dan Skripsi dalam Satu Antarmuka yang Rapi dan Terstruktur.
       </p>
     </header>
 
@@ -471,7 +468,6 @@ const clearSearch = () => {
     <!-- Footer -->
     <footer class="w-full max-w-3xl mt-20 pt-8 border-t border-[#3D3427] text-center text-xs text-[#8E8679] space-y-1">
       <p>Cari Literatur &bull; Platform Pencarian Karya Ilmiah & Akademik</p>
-      <p class="text-[11px] text-[#736B5E]">Didukung oleh OpenAlex Open Science Database</p>
     </footer>
   </div>
 </template>
